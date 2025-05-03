@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    configs:
+      - source: index_html
+        target: /usr/share/nginx/html/index.html
+    networks:
+      - webnet
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker    
+
+  backend:
+    image: bhavukm/be2
+    ports:
+      - "3000:3000"
+    networks:
+      - webnet
+    depends_on:
+      - db
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker    
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - webnet
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+configs:
+  index_html:
+    file: ./fe/index.html
+
+networks:
+  webnet:
+
+volumes:
+  dbdata:
