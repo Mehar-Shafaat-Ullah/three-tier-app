@@ -2,12 +2,9 @@ version: "3.8"
 
 services:
   frontend:
-    image: nginx:alpine
+    image: bhavukm/fe-swarm
     ports:
       - "80:80"
-    configs:
-      - source: index_html
-        target: /usr/share/nginx/html/index.html
     networks:
       - webnet
     deploy:
@@ -42,9 +39,6 @@ services:
       placement:
         constraints:
           - node.role == worker
-configs:
-  index_html:
-    file: ./fe/index.html
 
 networks:
   webnet:
