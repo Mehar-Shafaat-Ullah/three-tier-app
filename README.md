@@ -4,7 +4,9 @@
 
 1. Provision 2 AWS EC2 Instances, preferably with AMI Ubuntu 24.04 LTS. This setup has 1 Master and 1 Worker node as part of the Swarm Cluster.
 
-2. On both EC2 Instances, please install Docker, which is also going to install docker swarm:
+2. On both EC2 Instances, please install Docker, which is also going to install Docker Swarm:
+
+   https://docs.docker.com/engine/install/ubuntu/
 
    for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
@@ -24,11 +26,11 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 echo \
 
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+$(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
   
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   
 sudo apt-get update
 
