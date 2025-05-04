@@ -1,3 +1,14 @@
+**Docker Swarm Architecture:**
+
+![image](https://github.com/user-attachments/assets/210e00cc-c766-4b34-b205-895ac41d52b0)
+
+Docker Swarm is a container orchestration tool for managing a cluster of Docker engines (Nodes) as a single virtual system.
+
+ It is not initialized by default when you install Docker, but it gets installed along with Docker.
+ 
+![image](https://github.com/user-attachments/assets/a324e467-8ddc-4ada-9b3e-bca3ac43f60a)
+
+
 **Deploying a sample 3-tier application with Docker Swarm and orchestrating the containers**
 
 **Step-by-Step Instructions:**
