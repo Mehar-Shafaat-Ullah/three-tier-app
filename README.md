@@ -4,7 +4,7 @@
  
 ![image](https://github.com/user-attachments/assets/a324e467-8ddc-4ada-9b3e-bca3ac43f60a)
 
-Key Concepts![image](https://github.com/user-attachments/assets/9ce3c646-6ae8-4a07-8ca1-d6cdce08585d)
+[image](https://github.com/user-attachments/assets/9ce3c646-6ae8-4a07-8ca1-d6cdce08585d)
 
 
 
