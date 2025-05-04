@@ -4,6 +4,9 @@
  
 ![image](https://github.com/user-attachments/assets/a324e467-8ddc-4ada-9b3e-bca3ac43f60a)
 
+![image](https://github.com/user-attachments/assets/8ee33fe2-ca78-4c0c-84b5-b6a8d9aac84e)
+
+
 **Deploying a sample 3-tier application with Docker Swarm and orchestrating the containers**
 
 **Step-by-Step Instructions:**
