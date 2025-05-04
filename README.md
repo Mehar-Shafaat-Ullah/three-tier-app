@@ -15,7 +15,7 @@
 
 
 
-**Deploying a sample 3-tier application with Docker Swarm and orchestrating the containers**
+**Deploying a sample 3-tier application with Docker Swarm**
 
 **Step-by-Step Instructions:**
 
