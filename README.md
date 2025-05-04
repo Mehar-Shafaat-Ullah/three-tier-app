@@ -36,11 +36,11 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-3. On Master node, initiate the swarm cluster:
+3. On the Master node, initiate the swarm cluster:
 
    	sudo docker swarm init
 
-4. On Worker node, execute the "docker swarm join" command generated in step 3:
+4. On the Worker node, execute the "docker swarm join" command generated in step 3:
 
    example command: sudo docker swarm join --token SWMTKN-1-65mdl491vt3fxe76g2egngd7lj23nsewprmhy6kvrmr4z386ka-byvige262gb93inckg1xfnrh5 172.31.19.78:2377
 
@@ -61,9 +61,20 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 8. Access the application: http://worker-node-ip:80
 
 9. sudo docker service ls
-
+   
 10. On worker node: sudo docker ps
 
+11. sudo docker service scale swarmapp_frontend=3
+
+12. sudo docker service ls   # check scaled application replicas
+
+13. sudo docker service ps swarmapp_frontend
+
+14. On Master node: watch sudo docker service ls
+
+15. On Worker node: sudo docker ps
+
+16. Delete one container manually: sudo docker rm -f container-id  #On the Master node, the replicas will automatically change from 2 to 3
 
    
 
