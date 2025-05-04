@@ -13,8 +13,6 @@
 
 ![image](https://github.com/user-attachments/assets/a510a67e-9b79-4f75-8d2d-88e20c1cf8ce)
 
-
-
 **Deploying a sample 3-tier application with Docker Swarm**
 
 **Step-by-Step Instructions:**
@@ -25,9 +23,9 @@
 
    https://docs.docker.com/engine/install/ubuntu/
 
-   for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+ _  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done_
 
-   # Add Docker's official GPG key:
+_   # Add Docker's official GPG key:
    
 sudo apt-get update
 
@@ -42,8 +40,8 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 # Add the repository to Apt sources:
 
 echo \
-
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+_
+_"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   
 $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
   
@@ -51,47 +49,47 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin_
 
 3. On the Master node, initiate the swarm cluster:
 
-   	sudo docker swarm init
+   _	sudo docker swarm init_
 
 4. On the Worker node, execute the "docker swarm join" command generated in step 3:
 
-   example command: sudo docker swarm join --token SWMTKN-1-65mdl491vt3fxe76g2egngd7lj23nsewprmhy6kvrmr4z386ka-byvige262gb93inckg1xfnrh5 172.31.19.78:2377
+   example command: _sudo docker swarm join --token SWMTKN-1-65mdl491vt3fxe76g2egngd7lj23nsewprmhy6kvrmr4z386ka-byvige262gb93inckg1xfnrh5 172.31.19.78:2377_
 
-5. On Master node: sudo docker node ls
+5. On Master node:_ sudo docker node ls_
 
    ![image](https://github.com/user-attachments/assets/9f28a28a-daa3-4334-8128-2977586f3cf1)
 
-6. Install git: sudo apt install git -y
+6. Install git: _sudo apt install git -y_
 
 7. Deploy a swarm stack for the cloned project:
   
-   git clone https://github.com/bhavukm/swarmapp.git
+  _ git clone https://github.com/bhavukm/swarmapp.git_
 
-   cd swarmapp
+  _ cd swarmapp_
 
-   sudo docker stack deploy -c docker-compose.yml swarmapp
+  _ sudo docker stack deploy -c docker-compose.yml swarmapp_
 
 8. Access the application: http://worker-node-ip:80
 
-9. sudo docker service ls
+9._ sudo docker service ls_
    
-10. On worker node: sudo docker ps
+10. On worker node: _sudo docker ps_
 
-11. sudo docker service scale swarmapp_frontend=3
+11._ sudo docker service scale swarmapp_frontend=3_
 
-12. sudo docker service ls   # check scaled application replicas
+12. _sudo docker service ls_   # check scaled application replicas
 
-13. sudo docker service ps swarmapp_frontend
+13._ sudo docker service ps swarmapp_frontend_
 
-14. On Master node: watch sudo docker service ls
+14. On Master node: _watch sudo docker service ls_
 
-15. On Worker node: sudo docker ps
+15. On Worker node: _sudo docker ps_
 
-16. Delete one container manually: sudo docker rm -f container-id  #On the Master node, the replicas will automatically change from 2 to 3
+16. Delete one container manually:_ sudo docker rm -f container-id_  #On the Master node, the replicas will automatically change from 2 to 3
 
    
 
