@@ -6,6 +6,13 @@
 
 ![image](https://github.com/user-attachments/assets/8ee33fe2-ca78-4c0c-84b5-b6a8d9aac84e)
 
+![image](https://github.com/user-attachments/assets/c11c22e5-5f9e-46a4-85bf-c71214288ac3)
+
+![image](https://github.com/user-attachments/assets/9c199eca-8887-4df8-8ad4-6f8504254f77)
+
+![image](https://github.com/user-attachments/assets/a510a67e-9b79-4f75-8d2d-88e20c1cf8ce)
+
+
 
 **Deploying a sample 3-tier application with Docker Swarm and orchestrating the containers**
 
