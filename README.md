@@ -25,13 +25,13 @@
 
 3. On the Master node, initiate the swarm cluster:
 
-   _	sudo docker swarm init_
+ _sudo docker swarm init_
 
 4. On the Worker node, execute the "docker swarm join" command generated in step 3:
 
    example command: _sudo docker swarm join --token SWMTKN-1-65mdl491vt3fxe76g2egngd7lj23nsewprmhy6kvrmr4z386ka-byvige262gb93inckg1xfnrh5 172.31.19.78:2377_
 
-5. On Master node:_ sudo docker node ls_
+5. On Master node: _sudo docker node ls_
 
    ![image](https://github.com/user-attachments/assets/9f28a28a-daa3-4334-8128-2977586f3cf1)
 
@@ -39,30 +39,26 @@
 
 7. Deploy a swarm stack for the cloned project:
   
-  _ git clone https://github.com/bhavukm/swarmapp.git_
+  _git clone https://github.com/bhavukm/swarmapp.git_
 
-  _ cd swarmapp_
+  _cd swarmapp_
 
-  _ sudo docker stack deploy -c docker-compose.yml swarmapp_
+  _sudo docker stack deploy -c docker-compose.yml swarmapp_
 
 8. Access the application: http://worker-node-ip:80
 
-9._ sudo docker service ls_
+9. _sudo docker service ls_
    
 10. On worker node: _sudo docker ps_
 
-11._ sudo docker service scale swarmapp_frontend=3_
+11. _sudo docker service scale swarmapp_frontend=3_
 
 12. _sudo docker service ls_   # check scaled application replicas
 
-13._ sudo docker service ps swarmapp_frontend_
+13. _sudo docker service ps swarmapp_frontend_
 
 14. On Master node: _watch sudo docker service ls_
 
 15. On Worker node: _sudo docker ps_
 
-16. Delete one container manually:_ sudo docker rm -f container-id_  #On the Master node, the replicas will automatically change from 2 to 3
-
-   
-
-
+16. Delete one container manually: _sudo docker rm -f container-id_  #On the Master node, the replicas will automatically change from 2 to 3
