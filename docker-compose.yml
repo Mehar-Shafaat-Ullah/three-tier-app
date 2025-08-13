@@ -2,18 +2,19 @@ version: "3.8"
 
 services:
   frontend:
-    image: fe-image
+    image: bhavukm/fe-swarm
     ports:
       - "80:80"
     networks:
       - webnet
+# where to run tasks
     deploy:
       placement:
         constraints:
           - node.role == worker    
 
   backend:
-    image: be-image
+    image: bhavukm/be2
     ports:
       - "3000:3000"
     networks:
