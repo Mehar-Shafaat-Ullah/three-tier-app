@@ -19,7 +19,7 @@
 
 1. Provision 2 AWS EC2 Instances, preferably with AMI Ubuntu 24.04 LTS. This setup has 1 Master (Manager) and 1 Worker (Slave) node as part of the Swarm Cluster.
 
-2. On both EC2 Instances, please install Docker, which is also going to install Docker Swarm:
+2. On both EC2 Instances, please install Docker , which is also going to install Docker Swarm:
 
    https://docs.docker.com/engine/install/ubuntu/
 
